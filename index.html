@@ -11,6 +11,7 @@
     />
     <link href="css/general.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
+    <link href="css/queries.css" rel="stylesheet" />
   </head>
   <body>
     <header class="header">
@@ -26,6 +27,40 @@
           <li><a href="#" class="nav-cta">Get started</a></li>
         </ul>
       </nav>
+      <button class="btn-mobile-nav">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon-mobile-nav"
+          viewBox="0 0 512 512"
+          name="menu-outline"
+        >
+          <title>Menu</title>
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-miterlimit="10"
+            stroke-width="32"
+            d="M80 160h352M80 256h352M80 352h352"
+          />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon-mobile-nav"
+          viewBox="0 0 512 512"
+          name="close-outline"
+        >
+          <title>Close</title>
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="32"
+            d="M368 368L144 144M368 144L144 368"
+          />
+        </svg>
+      </button>
     </header>
 
     <main>
@@ -743,7 +778,7 @@
 
     <footer class="footer">
       <div class="container grid grid-footer">
-        <div class="logo-col">
+        <div class="logo-col" id="logo">
           <a href="#" class="footer-logo">
             <img class="logo" alt="omnifood logo" src="img/omnifood-logo.png" />
           </a>
@@ -784,7 +819,7 @@
 
           <p class="copyright">Copyright &copy; 2027 by Omnifood, Inc. All rights reserved.</p>
         </div>
-        <div class="address-column">
+        <div class="address-column" id="address">
           <p class="footer-heading">Contact us</p>
           <address class="contacts">
             <p class="address">623 Harrison St., 2nd Floor, San Francisco, CA 94107</p>
@@ -794,7 +829,7 @@
             </p>
           </address>
         </div>
-        <nav class="nav-col">
+        <nav class="nav-col" id="account">
           <p class="footer-heading">Account</p>
           <ul class="footer-nav">
             <li><a href="#" class="footer-link">Create account</a></li>
@@ -803,7 +838,7 @@
             <li><a href="#" class="footer-link">Android app</a></li>
           </ul>
         </nav>
-        <nav class="nav-col">
+        <nav class="nav-col" id="company">
           <p class="footer-heading">Company</p>
           <ul class="footer-nav">
             <li><a href="#" class="footer-link">About Omnifood</a></li>
@@ -812,7 +847,7 @@
             <li><a href="#" class="footer-link">Careers</a></li>
           </ul>
         </nav>
-        <nav class="nav-col">
+        <nav class="nav-col" id="ressources">
           <p class="footer-heading">Resources</p>
           <ul class="footer-nav">
             <li><a href="#" class="footer-link">Recipe directory</a></li>
@@ -822,5 +857,12 @@
         </nav>
       </div>
     </footer>
+    <script>
+      const btn = document.getElementsByClassName("btn-mobile-nav");
+
+      btn.addEventListener("click", function () {
+        document.getElementsByTagName("header").classList.add(".nav-open");
+      });
+    </script>
   </body>
 </html>

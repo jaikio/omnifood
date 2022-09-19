@@ -4,15 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Omnifood</title>
+    <meta
+      name="description"
+      content="Omnifood is an AI powered food subscription that will make you eat healthy again, 365 days per year. Its tailored to your taste."
+    />
+
+    <link rel="icon" href="img/favicon.png" />
     <link
+      rel="apple-icon"
+      href="img/apple-touch-icon.png"
+      <link
       href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link href="css/general.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/queries.css" rel="stylesheet" />
+    <link defer rel="manifest" href="manifest.manifest" />
+    <title>Omnifood &mdash; start eating well!</title>
+    <script
+      defer
+      src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+    ></script>
   </head>
+
   <body>
     <header class="header">
       <a href="#">
@@ -20,11 +35,11 @@
       </a>
       <nav class="main-nav">
         <ul class="main-nav-list">
-          <li><a href="#">How it works</a></li>
-          <li><a href="#">Meals</a></li>
-          <li><a href="#">Testimonials</a></li>
-          <li><a href="#">Pricing</a></li>
-          <li><a href="#" class="nav-cta">Get started</a></li>
+          <li><a href="#how" class="main-nav-link">How it works</a></li>
+          <li><a href="#meals" class="main-nav-link">Meals</a></li>
+          <li><a href="#testimonials" class="main-nav-link">Testimonials</a></li>
+          <li><a href="#pricing" class="main-nav-link">Pricing</a></li>
+          <li><a href="#cta" class="nav-cta main-nav-link">Get started</a></li>
         </ul>
       </nav>
       <button class="btn-mobile-nav">
@@ -73,8 +88,8 @@
               Tailored to your personal tastes and nutritional needs. We have delivered 250,000+
               meals last year!
             </p>
-            <a href="#" class="btn btn--full margin-rs">Start eating well</a>
-            <a href="#" class="btn btn--outline">Learn more &darr;</a>
+            <a href="#cta" class="btn btn--full margin-rs">Start eating well</a>
+            <a href="#how" class="btn btn--outline">Learn more &darr;</a>
             <div class="delivered-meals">
               <div class="delivered-imgs">
                 <img src="img/customers/customer-1.jpg" alt="customer face" />
@@ -88,11 +103,15 @@
             </div>
           </div>
           <div class="hero-img-box">
-            <img
-              src="img/hero.png"
-              class="hero-img"
-              alt="Woman enjoying food, means in storage container, and food bowls on a table"
-            />
+            <picture>
+              <source srcset="img/hero.webp" type="image/webp" />
+              <source srcset="img/hero.png" type="image/png" />
+              <img
+                src="img/hero.png"
+                class="hero-img"
+                alt="Woman enjoying food, means in storage container, and food bowls on a table"
+              />
+            </picture>
           </div>
         </div>
       </section>
@@ -111,7 +130,7 @@
       </section>
 
       <!-- section how -->
-      <section class="section-how">
+      <section class="section-how" id="how">
         <div class="container">
           <span class="subheading">How it works</span>
           <h2 class="heading-secondary">Your daily dose of health in 3 simple steps</h2>
@@ -162,7 +181,7 @@
         </div>
       </section>
 
-      <section class="section-meals">
+      <section class="section-meals" id="meals">
         <div class="container center-text">
           <span class="subheading">Meals</span>
           <h2 class="heading-secondary">Omnifood AI chooses from 5,000+ recipes</h2>
@@ -433,7 +452,7 @@
         </div>
       </section>
 
-      <section class="section-testimonials">
+      <section class="section-testimonials" id="testimonials">
         <div class="testimonial-container">
           <span class="subheading">Testimonials</span>
           <h2 class="heading-secondary">Once you try it, you can't go back</h2>
@@ -517,7 +536,7 @@
         </div>
       </section>
 
-      <section class="section-pricing">
+      <section class="section-pricing" id="pricing">
         <div class="container">
           <span class="subheading">Pricing</span>
           <h2 class="heading-secondary">Eating well, without breaking the bank</h2>
@@ -587,7 +606,7 @@
               </li>
             </ul>
             <div class="plan-sign-up">
-              <a href="#" class="btn btn--full">Start eating well</a>
+              <a href="#cta" class="btn btn--full">Start eating well</a>
             </div>
           </div>
           <div class="pricing-plan pricing-plan-complete">
@@ -651,7 +670,7 @@
               </li>
             </ul>
             <div class="plan-sign-up">
-              <a href="#" class="btn btn--full">Start eating well</a>
+              <a href="#cta" class="btn btn--full">Start eating well</a>
             </div>
           </div>
         </div>
@@ -738,7 +757,7 @@
         </div>
       </section>
 
-      <section class="section-cta">
+      <section class="section-cta" id="cta">
         <div class="container">
           <div class="cta">
             <div class="cta-text-box">
@@ -747,18 +766,30 @@
                 Healthy, tasty and hassle-free meals are waiting for you. Start eating well today.
                 You can cancel or pause anytime. And the first meal is on us!
               </p>
-              <form class="cta-form" action="#">
+              <form class="cta-form" name="sign-up" netlify>
                 <div>
                   <label for="full-name">Full name</label>
-                  <input id="full-name" type="text" placeholder="John Smith" required />
+                  <input
+                    id="full-name"
+                    type="text"
+                    placeholder="John Smith"
+                    name="full-name"
+                    required
+                  />
                 </div>
                 <div>
                   <label for="email">Email adress</label>
-                  <input id="email" type="email" placeholder="me@example.com" required />
+                  <input
+                    id="email"
+                    type="email"
+                    placeholder="me@example.com"
+                    name="email"
+                    required
+                  />
                 </div>
                 <div>
                   <label for="select-where">Where did you hear about us?</label>
-                  <select id="select-where">
+                  <select id="select-where" name="select-where">
                     <option>Please choose an option</option>
                     <option value="friends">Friends and family</option>
                     <option value="youtube">Youtube video</option>
@@ -817,7 +848,9 @@
             </li>
           </ul>
 
-          <p class="copyright">Copyright &copy; 2027 by Omnifood, Inc. All rights reserved.</p>
+          <p class="copyright">
+            Copyright &copy; <span class="year">2027</span> by Omnifood, Inc. All rights reserved.
+          </p>
         </div>
         <div class="address-column" id="address">
           <p class="footer-heading">Contact us</p>
@@ -857,12 +890,6 @@
         </nav>
       </div>
     </footer>
-    <script>
-      const btn = document.getElementsByClassName("btn-mobile-nav");
-
-      btn.addEventListener("click", function () {
-        document.getElementsByTagName("header").classList.add(".nav-open");
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>

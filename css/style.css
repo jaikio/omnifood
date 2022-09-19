@@ -7,6 +7,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: #fdf2e9;
+  position: relative;
 
   /* Because we want to be sticky later */
   height: 9.6rem;
@@ -23,7 +24,7 @@
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 3.2rem;
+  gap: 4.8rem;
 }
 
 .main-nav-list a:link,
@@ -53,6 +54,41 @@ a.nav-cta:hover,
 a.nav-cta:active {
   background-color: #cf711f;
 }
+
+.btn-mobile-nav {
+  border: none;
+  background-color: none;
+  cursor: pointer;
+  display: none;
+}
+
+.icon-mobile-nav {
+  width: 4.8rem;
+  height: 4.8rem;
+  color: #333;
+}
+
+.icon-mobile-nav[name="close-outline"] {
+  display: none;
+}
+
+.sticky .header {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  z-index: 999;
+  height: 8rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  box-shadow: rgba(0, 0, 0, 0.03);
+}
+
+.sticky .section-hero {
+  margin-top: 9.6rem;
+}
+
 /* *********************************** */
 /* HERO SECTION */
 /* *********************************** */
